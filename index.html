@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+background:
+radial-gradient(circle at top, rgba(255,120,180,.15), transparent 35%),
+radial-gradient(circle at 80% 20%, rgba(170,120,255,.12), transparent 30%),
+linear-gradient(180deg,#050507 0%,#0d1220 25%,#1a1730 50%,#101827 75%,#050507 100%);
+color:white;
+font-family:Georgia,serif;
+overflow-x:hidden;
+}
+
+.container{max-width:850px;margin:auto;padding:20px}
+.hero{height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:25px}
+.hero h1{font-size:3rem}
+
+.card{margin:80px 0}
+.foto{
+width:100%;
+border-radius:28px;
+margin-bottom:25px;
+box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
+
+.texto{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:25px;
+}
+
+.typewriter{
+line-height:1.9;
+font-size:1.08rem;
+margin-bottom:18px;
+white-space:pre-wrap;
+min-height:30px;
+}
+
+.typewriter::after{
+content:"|";
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{opacity:0}
+}
+
+.final{
+text-align:center;
+padding:100px 25px;
+}
+
+.corazon{
+font-size:4rem;
+animation:latir 1.5s infinite;
+}
+
+@keyframes latir{
+50%{transform:scale(1.2)}
+}
+</style>
+</head>
+<body>
+
+<audio id="musica" preload="auto">
+<source src="https://files.catbox.moe/mb7qhs.m4a" type="audio/mp4">
+</audio>
+
+<section class="hero">
+<div>
+<h1>Para Ti ❤️</h1>
+<p>Hay cosas que nunca he sabido decir completamente,<br>así que decidí escribirlas aquí.</p>
+<p>Desliza hacia abajo.</p>
+</div>
+</section>
+
+<div class="container">
+
+<div class="card">
+<img class="foto" src="https://files.catbox.moe/a6ib30.jpg">
+<div class="texto">
+<p class="typewriter">Hay muchas cosas que quiero decirte, y aun así siento que las palabras nunca serán suficientes para expresar todo lo que significas para mí.</p>
+<p class="typewriter">Cuando te conocí no imaginaba que llegarías a convertirte en una persona tan importante para mí.</p>
+<p class="typewriter">Primero fueron nuestras conversaciones, después las risas y luego llegaron los recuerdos.</p>
+<p class="typewriter">Sin darme cuenta comenzaste a ocupar un lugar especial dentro de mí.</p>
+</div>
+</div>
+
+<div class="card">
+<img class="foto" src="https://files.catbox.moe/7ok5q4.jpg">
+<div class="texto">
+<p class="typewriter">Cuando veo esta foto recuerdo algo muy importante.</p>
+<p class="typewriter">Los mejores momentos de mi vida han sido aquellos en los que me he sentido feliz estando contigo.</p>
+<p class="typewriter">Hay recuerdos que permanecen guardados porque representan emociones y sentimientos.</p>
+<p class="typewriter">Y cada vez que vuelvo a verla recuerdo lo bien que se sentía compartir aquel momento contigo.</p>
+</div>
+</div>
+
+<div class="card">
+<img class="foto" src="https://files.catbox.moe/vlqc65.jpg">
+<div class="texto">
+<p class="typewriter">Hay algo que siempre me ha gustado de ti.</p>
+<p class="typewriter">Podría hablar de tu sonrisa, de tu mirada o de lo hermosa que me pareces.</p>
+<p class="typewriter">Pero lo que más admiro es la persona que eres.</p>
+<p class="typewriter">Cada día encuentro una razón nueva para admirarte.</p>
+</div>
+</div>
+
+<div class="card">
+<img class="foto" src="https://files.catbox.moe/fsynhm.jpg">
+<div class="texto">
+<p class="typewriter">Esta probablemente sea una de mis fotografías favoritas.</p>
+<p class="typewriter">Porque representa compañía, confianza y cariño.</p>
+<p class="typewriter">Hay una tranquilidad que encuentro cuando estoy contigo que me cuesta explicar.</p>
+<p class="typewriter">Y espero seguir creando muchos más recuerdos contigo.</p>
+</div>
+</div>
+
+</div>
+
+<section class="final">
+<div class="corazon">❤️</div>
+<h2>Gracias por existir</h2>
+<p class="typewriter">Si pudiera volver al principio y elegir nuevamente, te volvería a elegir a ti.</p>
+</section>
+
+<script>
+const audio=document.getElementById('musica');
+let iniciada=false;
+function iniciar(){
+ if(iniciada) return;
+ iniciada=true;
+ audio.currentTime=8;
+ audio.play().catch(()=>{});
+}
+document.addEventListener('click',iniciar,{once:true});
+document.addEventListener('touchstart',iniciar,{once:true});
+document.addEventListener('scroll',iniciar,{once:true});
+
+const textos=document.querySelectorAll('.typewriter');
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   const el=entry.target;
+   if(el.dataset.done) return;
+   el.dataset.done=true;
+
+   const original=el.textContent;
+   el.textContent='';
+   let i=0;
+
+   function escribir(){
+    if(i<original.length){
+      el.textContent+=original.charAt(i);
+      i++;
+      setTimeout(escribir,25);
+    }
+   }
+   escribir();
+  }
+ });
+},{threshold:0.4});
+
+textos.forEach(t=>observer.observe(t));
+</script>
+
+</body>
+</html>
