@@ -7,17 +7,35 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Georgia,serif;background:linear-gradient(180deg,#050507,#1b1a35,#050507);color:white;overflow-x:hidden}
+
+body.lock{overflow:hidden;}
+
+#bloqueo{
+  position:fixed;
+  inset:0;
+  background:transparent;
+  z-index:9998;
+  pointer-events:all;
+}
+
 #inicio{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;flex-direction:column;background:#050507;z-index:9999;transition:1s}
 #inicio button{padding:15px 30px;border:none;border-radius:30px;font-size:1.2rem;cursor:pointer}
+
 .hero,.card,.final{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center}
+
 .foto{width:min(90%,800px);border-radius:25px;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+
 .texto{max-width:850px;margin-top:20px;padding:20px;background:rgba(255,255,255,.08);border-radius:20px;line-height:1.9;white-space:pre-wrap}
+
 .corazon{font-size:5rem;animation:latir 1.5s infinite}
 @keyframes latir{50%{transform:scale(1.2)}}
+
 .star{position:fixed;background:white;border-radius:50%;z-index:-1}
 </style>
 </head>
 <body>
+
+<div id="bloqueo"></div>
 
 <div id="inicio">
 <h1>Para Ti ❤️</h1><br>
@@ -85,23 +103,10 @@ Lo que más admiro de ti no es solamente lo que se puede ver. También admiro la
 <div class="texto type">
 A veces me pregunto si eres consciente de lo especial que eres, porque yo sí lo soy. Y cada día encuentro una razón nueva para admirarte.
 
-Hay una tranquilidad que encuentro cuando estoy contigo que me cuesta explicar. Es una sensación que aparece cuando hablamos, cuando reímos, cuando caminamos juntos o incluso cuando simplemente estamos ahí sin necesidad de decir nada.
-
-Me gusta la manera en que los momentos contigo se sienten naturales, como si todo encajara perfectamente.
-
-Y cada vez que recuerdo momentos como esos entiendo que la felicidad muchas veces no está en las cosas grandes. Está en los detalles.
-
-Está en las pequeñas acciones, en las sonrisas inesperadas, en las conversaciones que duran horas y en esos instantes sencillos que terminan convirtiéndose en nuestros favoritos.
+Hay una tranquilidad que encuentro cuando estoy contigo que me cuesta explicar.
 
 Gracias por cada sonrisa.
 Gracias por cada conversación.
-Gracias por cada momento compartido.
-Gracias por cada recuerdo que hemos construido.
-Gracias por permitirme conocerte y por formar parte de mi vida de una manera tan especial.
-
-No sé cuántas fotografías más tomaremos, no sé cuántos recuerdos más construiremos ni cuántas historias nos esperan todavía.
-
-Pero sí sé algo: si pudiera volver al día en que comenzamos a conocernos, volvería a elegir cada conversación, volvería a elegir cada momento y volvería a elegirte a ti.
 
 Porque entre todas las casualidades que pueden ocurrir en la vida, conocerte ha sido una de mis favoritas.
 
@@ -121,10 +126,14 @@ for(let i=0;i<120;i++){
 }
 
 const audio=document.getElementById('musica');
+
 document.getElementById('abrirCarta').onclick=async()=>{
  try{await audio.play();}catch(e){}
  document.getElementById('inicio').style.opacity='0';
  setTimeout(()=>document.getElementById('inicio').remove(),1000);
+
+ document.body.classList.add('lock'); // 🔒 bloquear scroll
+
  iniciar();
 };
 
@@ -144,6 +153,9 @@ async function iniciar(){
    await escribir(bloques[i]);
    await new Promise(r=>setTimeout(r,2000));
  }
+
+ document.body.classList.remove('lock'); // 🔓 desbloquear scroll
+ document.getElementById('bloqueo').style.display='none'; // 🔓 permitir tocar
 }
 </script>
 
