@@ -6,264 +6,111 @@
 <title>Para Ti ❤️</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-font-family:Georgia,serif;
-color:#fff;
-overflow-x:hidden;
-background:linear-gradient(180deg,#050507,#0f172a,#1b1a35,#0f172a,#050507);
-}
-.stars{position:fixed;inset:0;z-index:-2}
-.star{position:absolute;background:white;border-radius:50%;animation:twinkle 3s infinite}
-@keyframes twinkle{50%{opacity:.2;transform:scale(.5)}}
-
-.heart{
-position:fixed;
-bottom:-50px;
-font-size:24px;
-opacity:.3;
-animation:float 14s linear infinite;
-z-index:-1;
-}
-@keyframes float{
-from{transform:translateY(0)}
-to{transform:translateY(-120vh)}
-}
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-.hero h1{
-font-size:4rem;
-text-shadow:0 0 20px #ff80c8;
-margin-bottom:20px;
-}
-.hero p{line-height:1.8}
-
-.container{max-width:900px;margin:auto;padding:20px}
-
-.card{
-margin:90px 0;
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-}
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.foto{
-width:100%;
-border-radius:30px;
-box-shadow:0 20px 40px rgba(0,0,0,.5);
-}
-
-.texto{
-margin-top:20px;
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(10px);
-padding:30px;
-border-radius:25px;
-line-height:2;
-font-size:1.08rem;
-}
-
-.typewriter{
-white-space:pre-wrap;
-min-height:40px;
-}
-.typewriter::after{
-content:"|";
-animation:blink .7s infinite;
-}
-@keyframes blink{50%{opacity:0}}
-
-.final{
-text-align:center;
-padding:120px 25px;
-}
-.corazon{
-font-size:5rem;
-animation:latir 1.5s infinite;
-}
+body{font-family:Georgia,serif;background:linear-gradient(180deg,#050507,#1b1a35,#050507);color:white;overflow-x:hidden}
+#inicio{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;flex-direction:column;background:#050507;z-index:9999;transition:1s}
+#inicio button{padding:15px 30px;border:none;border-radius:30px;font-size:1.2rem;cursor:pointer}
+.hero,.card,.final{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;text-align:center}
+.foto{width:min(90%,800px);border-radius:25px;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.texto{max-width:850px;margin-top:20px;padding:20px;background:rgba(255,255,255,.08);border-radius:20px;line-height:1.9;white-space:pre-wrap}
+.corazon{font-size:5rem;animation:latir 1.5s infinite}
 @keyframes latir{50%{transform:scale(1.2)}}
+.star{position:fixed;background:white;border-radius:50%;z-index:-1}
 </style>
 </head>
 <body>
 
-<div class="stars"></div>
+<div id="inicio">
+<h1>Para Ti ❤️</h1><br>
+<button id="abrirCarta">❤️ Abrir Carta ❤️</button>
+</div>
 
-<div class="heart" style="left:10%">❤️</div>
-<div class="heart" style="left:30%;animation-delay:2s">💖</div>
-<div class="heart" style="left:50%;animation-delay:4s">❤️</div>
-<div class="heart" style="left:70%;animation-delay:1s">💖</div>
-<div class="heart" style="left:90%;animation-delay:3s">❤️</div>
-
-<audio id="musica" preload="auto">
+<audio id="musica" loop>
 <source src="https://files.catbox.moe/mb7qhs.m4a" type="audio/mp4">
 </audio>
 
 <section class="hero">
-<div>
 <h1>Para Ti ❤️</h1>
-<p>Hay historias que se escriben con palabras,<br>y otras que se escriben con recuerdos.</p>
-<br>
-<p>Desliza hacia abajo.</p>
-</div>
+<p>Hay historias que se escriben con palabras, y otras con recuerdos.</p>
 </section>
 
-<div class="container">
-
-<div class="card">
+<section class="card">
 <img class="foto" src="https://files.catbox.moe/a6ib30.jpg">
-<div class="texto"><p class="typewriter">Hay muchas cosas que quiero decirte, y aun así siento que las palabras nunca serán suficientes para expresar todo lo que significas para mí.
+<div class="texto type">Hay muchas cosas que quiero decirte, y aun así siento que las palabras nunca serán suficientes para expresar todo lo que significas para mí.
 
 Cuando te conocí no imaginaba que llegarías a convertirte en una persona tan importante para mí.
 
-Al principio eras alguien más entre tantas personas que uno conoce en la vida, pero poco a poco comenzaste a destacar.
+Al principio eras alguien más entre tantas personas que uno conoce en la vida, pero poco a poco comenzaste a destacar.</div>
+</section>
 
-Primero fueron nuestras conversaciones, después las risas y luego llegaron los recuerdos.
-
-Y sin darme cuenta comenzaste a ocupar un lugar especial dentro de mí.
-
-Hay personas que pasan por nuestra vida dejando momentos bonitos, pero también existen personas que cambian la forma en que vemos nuestros días.
-
-Tú perteneces a las segundas.
-
-Porque desde que apareciste, muchos momentos simples comenzaron a sentirse mucho más especiales.</p></div>
-</div>
-
-<div class="card">
+<section class="card">
 <img class="foto" src="https://files.catbox.moe/fsynhm.jpg">
-<div class="texto"><p class="typewriter">Cuando veo nuestras fotografías recuerdo algo muy importante.
+<div class="texto type">Cuando veo nuestras fotografías recuerdo algo muy importante.
 
 Los mejores momentos de mi vida no han sido necesariamente los más grandes ni los más impresionantes.
 
-Han sido aquellos en los que me he sentido feliz estando contigo.
+Han sido aquellos en los que me he sentido feliz estando contigo.</div>
+</section>
 
-Porque contigo aprendí que la felicidad muchas veces aparece de formas sencillas: en una conversación, en una caminata, en una mirada o en esos instantes que parecen pequeños pero terminan quedándose para siempre en el corazón.
-
-Hay recuerdos que permanecen guardados porque representan algo más que una simple imagen.
-
-Representan emociones, sentimientos y la tranquilidad de saber que estás junto a una persona que te importa de verdad.
-
-Y cada vez que vuelvo a ver esos momentos recuerdo exactamente eso, lo bien que se sentía compartirlos contigo.
-
-Más allá de la fotografía, recuerdo cómo me sentía, lo cómodo que era estar contigo, lo natural que parecía todo y lo mucho que disfrutaba simplemente tenerte cerca.</p></div>
-</div>
-
-<div class="card">
+<section class="card">
 <img class="foto" src="https://files.catbox.moe/vlqc65.jpg">
-<div class="texto"><p class="typewriter">Hay algo que siempre me ha gustado de ti, y es que eres una persona difícil de describir con pocas palabras.
+<div class="texto type">Hay algo que siempre me ha gustado de ti, y es que eres una persona difícil de describir con pocas palabras.
 
-Podría hablar de tu sonrisa, de tu mirada o de lo hermosa que me pareces, pero sentiría que todavía me faltarían muchas cosas por mencionar.
+Lo que más admiro de ti no es solamente lo que se puede ver.</div>
+</section>
 
-Lo que más admiro de ti no es solamente lo que se puede ver.
-
-También admiro la persona que eres, tu forma de pensar, tu manera de tratar a los demás, la forma en que te preocupas por quienes quieres y todos esos pequeños detalles que te hacen única.
-
-A veces me pregunto si eres consciente de lo especial que eres, porque yo sí lo soy.
-
-Y cada día encuentro una razón nueva para admirarte.</p></div>
-</div>
-
-<div class="card">
+<section class="card">
 <img class="foto" src="https://files.catbox.moe/7ok5q4.jpg">
-<div class="texto"><p class="typewriter">Hay una tranquilidad que encuentro cuando estoy contigo que me cuesta explicar.
+<div class="texto type">Hay una tranquilidad que encuentro cuando estoy contigo que me cuesta explicar.
 
-Es una sensación que aparece cuando hablamos, cuando reímos, cuando caminamos juntos o incluso cuando simplemente estamos ahí sin necesidad de decir nada.
-
-Me gusta la manera en que los momentos contigo se sienten naturales, como si todo encajara perfectamente.
-
-Y cada vez que recuerdo momentos como esos entiendo que la felicidad muchas veces no está en las cosas grandes.
-
-Está en los detalles.
-
-Está en las pequeñas acciones, en las sonrisas inesperadas, en las conversaciones que duran horas y en esos instantes sencillos que terminan convirtiéndose en nuestros favoritos.</p></div>
-</div>
-
-</div>
+Está en las pequeñas acciones, en las sonrisas inesperadas y en esos instantes sencillos.</div>
+</section>
 
 <section class="final">
 <div class="corazon">❤️</div>
 <h2>Gracias por existir</h2>
-<p class="typewriter">Gracias por cada sonrisa.
+<div class="texto type">Gracias por cada sonrisa.
 
 Gracias por cada conversación.
 
-Gracias por cada momento compartido.
-
-Gracias por cada recuerdo que hemos construido.
-
-Gracias por permitirme conocerte y por formar parte de mi vida de una manera tan especial.
-
-No sé cuántas fotografías más tomaremos, no sé cuántos recuerdos más construiremos ni cuántas historias nos esperan todavía.
-
-Pero sí sé algo: si pudiera volver al día en que comenzamos a conocernos, volvería a elegir cada conversación, volvería a elegir cada momento y volvería a elegirte a ti.
-
-Porque entre todas las casualidades que pueden ocurrir en la vida, conocerte ha sido una de mis favoritas.
-
-❤️</p>
+Porque entre todas las casualidades que pueden ocurrir en la vida, conocerte ha sido una de mis favoritas. ❤️</div>
 </section>
 
 <script>
-const stars=document.querySelector('.stars');
 for(let i=0;i<120;i++){
-const s=document.createElement('div');
-s.className='star';
-const z=Math.random()*3+1;
-s.style.width=z+'px';
-s.style.height=z+'px';
-s.style.left=Math.random()*100+'%';
-s.style.top=Math.random()*100+'%';
-stars.appendChild(s);
+ let s=document.createElement('div');
+ s.className='star';
+ let z=Math.random()*3+1;
+ s.style.width=z+'px';s.style.height=z+'px';
+ s.style.left=Math.random()*100+'%';
+ s.style.top=Math.random()*100+'%';
+ document.body.appendChild(s);
 }
 
 const audio=document.getElementById('musica');
-let started=false;
-function playMusic(){
-if(started)return;
-started=true;
-audio.play().catch(()=>{});
-}
-document.addEventListener('click',playMusic,{once:true});
-document.addEventListener('scroll',playMusic,{once:true});
+document.getElementById('abrirCarta').onclick=async()=>{
+ try{await audio.play();}catch(e){}
+ document.getElementById('inicio').style.opacity='0';
+ setTimeout(()=>document.getElementById('inicio').remove(),1000);
+ iniciar();
+};
 
-const cards=document.querySelectorAll('.card');
-new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting)e.target.classList.add('show');
-});
-},{threshold:.2}).observe(cards[0]);
-cards.forEach(c=>new IntersectionObserver(es=>{
-es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
-},{threshold:.2}).observe(c));
+async function escribir(el){
+ const t=el.dataset.txt||el.textContent;
+ el.dataset.txt=t; el.textContent='';
+ for(let i=0;i<t.length;i++){
+   el.textContent+=t[i];
+   await new Promise(r=>setTimeout(r,15));
+ }
+}
 
-document.querySelectorAll('.typewriter').forEach(el=>{
-const txt=el.textContent;
-el.textContent='';
-let done=false;
-new IntersectionObserver(entries=>{
-entries.forEach(en=>{
-if(en.isIntersecting && !done){
-done=true;
-let i=0;
-(function write(){
-if(i<txt.length){
-el.textContent+=txt.charAt(i++);
-setTimeout(write,12);
+async function iniciar(){
+ const bloques=document.querySelectorAll('.type');
+ for(let i=0;i<bloques.length;i++){
+   bloques[i].scrollIntoView({behavior:'smooth'});
+   await escribir(bloques[i]);
+   await new Promise(r=>setTimeout(r,1800));
+ }
 }
-})();
-}
-});
-},{threshold:.3}).observe(el);
-});
 </script>
 
 </body>
